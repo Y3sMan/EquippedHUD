@@ -1,0 +1,59 @@
+<NotepadPlus>
+    <Project name="DEV">
+        <Folder name="build">
+            <File name="build\test.js" />
+        </Folder>
+        <Folder name="src">
+            <Folder name=".hidden">
+                <File name="src\.hidden\LoricaRedone.ts" />
+                <File name="src\.hidden\YM_Lorica_Compat.ts" />
+                <File name="src\.hidden\YM_Lorica_Dispel.ts" />
+                <File name="src\.hidden\YM_Lorica_Shared.ts" />
+            </Folder>
+            <File name="src\index.ts" />
+        </Folder>
+        <File name=".gitignore" />
+        <File name="example-plugin.code-workspace" />
+        <File name="new_plugin.py" />
+        <File name="package-lock.json" />
+        <File name="package.json" />
+        <File name="README.md" />
+        <File name="skyrim.json" />
+        <File name="tsconfig.json" />
+        <File name="webpack.config.js" />
+        <Folder name="Lookups">
+            <File name="G:\Games\MO Instances\Enderal\mods\Skyrim Platform\Platform\Modules\skyrimPlatform.ts" />
+            <File name="node_modules\@skyrim-platform\po3-papyrus-extender\PO3_SKSEFunctions.d.ts" />
+            <Folder name="PapyrusUtil">
+                <File name="G:\Games\MO Instances\Enderal\mods\PapyrusUtil\Source\Scripts\StorageUtil.psc" />
+                <File name="G:\Games\MO Instances\Enderal\mods\PapyrusUtil\Source\Scripts\PapyrusUtil.psc" />
+                <File name="G:\Games\MO Instances\Enderal\mods\PapyrusUtil\Source\Scripts\ObjectUtil.psc" />
+                <File name="G:\Games\MO Instances\Enderal\mods\PapyrusUtil\Source\Scripts\MiscUtil.psc" />
+                <File name="G:\Games\MO Instances\Enderal\mods\PapyrusUtil\Source\Scripts\JsonUtil.psc" />
+                <File name="G:\Games\MO Instances\Enderal\mods\PapyrusUtil\Source\Scripts\ActorUtil.psc" />
+            </Folder>
+        </Folder>
+    </Project>
+    <Project name="Lorica">
+        <Folder name="src">
+            <File name="G:\Games\MO Instances\Enderal\mods\LoricaRedone\src\LoricaRedone.ts" />
+            <File name="G:\Games\MO Instances\Enderal\mods\LoricaRedone\src\YM_Lorica_Compat.ts" />
+            <File name="G:\Games\MO Instances\Enderal\mods\LoricaRedone\src\YM_Lorica_Dispel.ts" />
+            <File name="G:\Games\MO Instances\Enderal\mods\LoricaRedone\src\YM_Lorica_Shared.ts" />
+        </Folder>
+        <File name="G:\Games\MO Instances\Enderal\mods\SP DEV - LoricaRedone\package.json" />
+        <File name="G:\Games\MO Instances\Enderal\mods\SP DEV - LoricaRedone\webpack.config.js" />
+        <File name="G:\Games\MO Instances\Enderal\mods\SP DEV - LoricaRedone\tsconfig.json" />
+        <Folder name="Examples">
+            <File name="G:\Games\MO Instances\Enderal\mods\CastingRegeneration\platform\CastingRegeneration\CastingRegeneration.ts" />
+            <File name="G:\Games\MO Instances\Enderal\mods\Lorica Redone - 4.1.0 - RC1 ib1.0\Scripts\source\AIX_UpkeepCompatibilityScript.psc" />
+            <File name="G:\Games\MO Instances\Enderal\mods\Lorica Redone - 4.1.0 - RC1 ib1.0\Scripts\source\AIX_UpkeepExpScript.psc" />
+            <File name="G:\Games\MO Instances\Enderal\mods\Lorica Redone - 4.1.0 - RC1 ib1.0\Scripts\source\AIX_UpkeepPlayerScript.psc" />
+            <File name="G:\Games\MO Instances\Enderal\mods\Lorica Redone - 4.1.0 - RC1 ib1.0\Scripts\source\YM_DispelAll.psc" />
+            <File name="G:\Games\MO Instances\Enderal\mods\Lorica Redone - 4.1.0 - RC1 ib1.0\Scripts\source\YM_EffectFinish.psc" />
+            <File name="G:\Games\MO Instances\Enderal\mods\Lorica Redone - 4.1.0 - RC1 ib1.0\Scripts\source\YM_Lorica_AddSpell.psc" />
+            <File name="G:\Games\MO Instances\Enderal\mods\Lorica Redone - 4.1.0 - RC1 ib1.0\Scripts\source\YM_Lorica_EffectFinish_Conjuration.psc" />
+            <File name="G:\Games\MO Instances\Enderal\mods\Lorica Redone - 4.1.0 - RC1 ib1.0\Scripts\source\YM_mcmConfigBase.psc" />
+        </Folder>
+    </Project>
+</NotepadPlus>
