@@ -17,35 +17,64 @@ var left_offset = -500
 var right_offset = 500
 
 const key = '.equipped-hud.'
-var init = GetIntValue(null, key + 'init', 0)
-// var init = false
+function CreateWidgets() {
+    left_text = createText(x + left_offset, y, "Left", [1,1,1,1]);
+    right_text = createText(x + right_offset, y, "Right", [1,1,1,1]);
+    shout_text = createText(x, y, "Shout", [1,1,1,1]);
+    storage[key + 'init.'] = true
+    printConsole('EquippedHUD - SP initialized')
+}
+function SetWidgetValues() {
+    SetIntValue(null, key + 'left', left_text)
+    SetIntValue(null, key + 'right', right_text)
+    SetIntValue(null, key + 'shout', shout_text)
+    SetIntValue(null, key + 'init', 1)
+    SetEquipped()
+}
+function init() {
+    var init = GetIntValue(null, key + 'init', 0)
+    // if ( init == 0 ) {
+        CreateWidgets()
+        SetWidgetValues()
+    // }
+    SetIntValue(null, key + 'init', 1)
+}
+once('skyrimLoaded', () => { 
+    printConsole('skryimLoaded')
+    SetIntValue(null, key + 'init', 0)
+    CreateWidgets()
+});
+once('scriptInit', () => {
+    printConsole('scriptinit')
+    init()
+});
+once('loadGame', () => {
+    printConsole('loadgame')
+    SetIntValue(null, key + 'init', 0)
+    init()
+});
 once('update', () => {
-    destroyAllTexts()
-    if ( init == 0 ) {
-        left_text = createText(x + left_offset, y, "Left", [1,1,1,1]);
-        right_text = createText(x + right_offset, y, "Right", [1,1,1,1]);
-        shout_text = createText(x, y, "Shout", [1,1,1,1]);
-        storage[key + 'init.'] = true
-        init = 1
-        SetIntValue(null, key + 'init', 1)
-        SetEquipped(left_text, right_text, shout_text)
-        printConsole('EquippedHUD - SP initialized')
-    }
+    printConsole('init')
+    init()
 });
 on('menuOpen', () => { browser.setVisible(false); });
 on('menuClose', () => { browser.setVisible(true); });
-on('actionBeginDraw', () => { browser.setVisible(false); });
-on('actionBeginSheathe', () => { browser.setVisible(true); });
+on('actionBeginDraw', () => { 
+    printConsole('begindraw')
+    browser.setVisible(false); });
+    on('actionBeginSheathe', () => { 
+    printConsole('beginsheathe')
+    browser.setVisible(true); });
 on('equip', (e) => {
     if ( e.actor.getFormID() != pl()?.getFormID() ) { return; }
-    SetEquipped(left_text, right_text, shout_text)
+    SetEquipped()
 });
 on('unequip', (e) => {
     if ( e.actor.getFormID() != pl()?.getFormID() ) { return; }
-    SetEquipped(left_text, right_text, shout_text)
+    SetEquipped()
 });
 
-function SetEquipped(l: number, r: number, s: number) {
+function SetEquipped() {
     /* 
         0 = left hand
         1 = right hand
@@ -60,7 +89,23 @@ function SetEquipped(l: number, r: number, s: number) {
     if ( l_name == undefined ) { l_name = "None"}
     if ( r_name == undefined ) { r_name = "None"}
     if ( s_name == undefined ) { s_name = "None"}
+    let l: number 
+    let r: number 
+    let s: number 
+    // try {
+        l = GetWidget('left')
+        r = GetWidget('right')
+        s = GetWidget('shout')
+    // } catch (error) {
+        // error
+    // }
     setTextString(l, l_name)
     setTextString(r, r_name)
     setTextString(s, s_name)
+}
+function GetWidget(slot:string) {
+    slot = slot.toLowerCase()
+    if ( slot != 'left' || slot != 'right' || slot != 'shout') { return `${slot} is not a proper argument for GetWidget()`}
+    if ( GetIntValue(null, key + slot, 0) == 0 ) { return `${slot} widget not created`}
+    return GetIntValue(null, key + slot, 0)
 }
