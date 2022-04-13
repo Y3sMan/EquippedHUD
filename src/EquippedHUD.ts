@@ -34,8 +34,12 @@ once('update', () => {
 });
 on('menuOpen', () => { browser.setVisible(false); });
 on('menuClose', () => { browser.setVisible(true); });
-on('actionBeginDraw', () => { browser.setVisible(false); });
-on('actionBeginSheathe', () => { browser.setVisible(true); });
+on('actionBeginDraw', () => { 
+    printConsole('begin draw')
+    browser.setVisible(true); });
+on('actionBeginSheathe', () => { 
+    printConsole('begin sheathe')
+    browser.setVisible(false); });
 on('equip', (e) => {
     if ( e.actor.getFormID() != pl()?.getFormID() ) { return; }
     SetEquipped(left_text, right_text, shout_text)
