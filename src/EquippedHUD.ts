@@ -17,20 +17,20 @@ var left_offset = -500
 var right_offset = 500
 
 const key = '.equipped-hud.'
-var init = GetIntValue(null, key + 'init', 0)
 // var init = false
 once('update', () => {
-    destroyAllTexts()
-    if ( init == 0 ) {
-        left_text = createText(x + left_offset, y, "Left", [1,1,1,1]);
-        right_text = createText(x + right_offset, y, "Right", [1,1,1,1]);
-        shout_text = createText(x, y, "Shout", [1,1,1,1]);
-        storage[key + 'init.'] = true
-        init = 1
-        SetIntValue(null, key + 'init', 1)
-        SetEquipped(left_text, right_text, shout_text)
-        printConsole('EquippedHUD - SP initialized')
-    }
+//     // var init = GetIntValue(null, key + 'init', 0)
+//     // destroyAllTexts()
+//     // if ( init == 0 ) {
+//         left_text = createText(x + left_offset, y, "Left", [1,1,1,1]);
+//         right_text = createText(x + right_offset, y, "Right", [1,1,1,1]);
+//         shout_text = createText(x, y, "Shout", [1,1,1,1]);
+//         storage[key + 'init.'] = true
+//         // init = 1
+//         SetIntValue(null, key + 'init', 1)
+//         SetEquipped(left_text, right_text, shout_text)
+//         printConsole('EquippedHUD - SP initialized')
+//     // }
 });
 on('menuOpen', () => { browser.setVisible(false); });
 on('menuClose', () => { browser.setVisible(true); });
